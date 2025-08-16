@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.30)
 project(glrt)
 
-add_executable(glrt Source/main.cpp)
-target_link_libraries(glrt -libstdc++ -libgcc)
+add_library(glrt Source/glrt.cpp)
+
+add_executable(demo Demo/demo.cpp)
+target_link_libraries(demo glrt -libstdc++ -libgcc)
